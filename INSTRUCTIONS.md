@@ -25,7 +25,7 @@ Between the server and client, you'll need two terminal tabs! Because we're usin
 
 For this project you will create a gallery page to share pictures of things that are important to you. Visitors can click on an image to see a description and use a button to "like" an image. 
 
-To practice passing values through `props` in React, you will build the gallery using mulitple components - an `App`, `GalleryList`, and `GalleryItem`.
+To practice passing values through `props` in React, you will build the gallery using multiple components - an `App`, `GalleryList`, and `GalleryItem`.
 
 - `App` - represents the overall application or site 
 - `GalleryList` - represents the gallery of images. By componentizing, we could reuse this component in different applications
