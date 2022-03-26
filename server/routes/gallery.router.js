@@ -21,7 +21,6 @@ router.put('/like/:id', (req, res) => {
 
 
 //POST route
-//{ path: newImageLink, description: newImageDescription, likes: 0}
 router.post('/', (req, res) => {
     const image = req.body;
     const queryText =
