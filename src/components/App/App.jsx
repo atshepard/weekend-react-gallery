@@ -3,6 +3,7 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import Header from '../Header/Header.jsx';
 import GalleryList from '../GalleryList/GalleryList';
+import GalleryForm from '../GalleryForm/GalleryForm';
 import './App.css';
 
 function App() {
@@ -39,7 +40,15 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <p>Add a new image to the gallery:</p>
+      <br />
+
+      <GalleryForm 
+      getGallery={getGallery}
+      />
+
       <p>Gallery goes here:</p>
+      <br />
 
       <GalleryList
         galleryList={galleryList}
