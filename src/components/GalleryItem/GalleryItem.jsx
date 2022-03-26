@@ -1,4 +1,7 @@
 import {useState} from 'react';
+import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton'
+import { Favorite, FavoriteBorder, Delete } from '@mui/icons-material';
 
 function GalleryItem ({image, putLikes, deleteImage}) {
     let srcText = image.path;
@@ -28,10 +31,10 @@ function GalleryItem ({image, putLikes, deleteImage}) {
             }
 
             
-            <button className="button" onClick={(event) => {putLikes(image)}}>Like this!</button>
+            <Button variant="outlined" className="button" onClick={(event) => {putLikes(image)}}>Like this!</Button>
             <p className="likeCount"> Likes: {image.likes} </p>
 
-            <button className="button" onClick={(event) => {deleteImage(image)}}>Delete this!</button>
+            <IconButton aria-label="delete" className="button" onClick={(event) => {deleteImage(image)}}> <Delete /> </IconButton>
 
         </div>
         </>
