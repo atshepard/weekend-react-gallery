@@ -5,7 +5,7 @@ const galleryItems = require('../modules/gallery.data');
 
 // DO NOT MODIFY THIS FILE FOR BASE MODE
 
-// PUT Route
+// PUT for updating likes:
 router.put('/like/:id', (req, res) => {
     console.log(req.params);
     const galleryId = req.params.id;
@@ -19,11 +19,11 @@ router.put('/like/:id', (req, res) => {
         });
 }); // END PUT Route
 
-// GET Route
+// GET for pulling all items from database:
 router.get('/', (req, res) => {
-    res.send(galleryItems);
+    // res.send(galleryItems);
 
-    const queryText = `SELECT * FROM "images" ORDER BY "likes" DESC;`;
+    const queryText = `SELECT * FROM "images" ORDER BY "id" DESC;`;
 
     pool.query(queryText)
         .then((result) => {
