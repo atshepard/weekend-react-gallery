@@ -54,14 +54,11 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <p>Add a new image to the gallery:</p>
       <br />
 
       <GalleryForm 
       getGallery={getGallery}
       />
-
-      <p>Gallery goes here:</p>
       <br />
 
       <GalleryList

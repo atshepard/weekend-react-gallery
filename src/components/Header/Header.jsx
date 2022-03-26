@@ -2,7 +2,7 @@ function Header() {
 
     return (
         <header className="App-header">
-            <h1 className="App-title">Photo Gallery</h1>
+            <h1 className="App-title">Image Gallery</h1>
         </header>
     )
 }

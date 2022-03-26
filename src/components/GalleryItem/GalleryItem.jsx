@@ -1,6 +1,7 @@
 import {useState} from 'react';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton'
+import { IconButton } from '@mui/material';
+import Fab from '@mui/material/Fab';
+import { Badge } from '@mui/material';
 import { Favorite, FavoriteBorder, Delete } from '@mui/icons-material';
 
 function GalleryItem ({image, putLikes, deleteImage}) {
@@ -14,12 +15,6 @@ function GalleryItem ({image, putLikes, deleteImage}) {
         setImgClick(!imgClicked);
         // console.log(imgClicked);
     }
-
-    const checkLikes = () => {
-        if (image.likes > 0) {
-            setLikeStatus(true);
-        }
-      }
 
 
     return(
@@ -38,18 +33,11 @@ function GalleryItem ({image, putLikes, deleteImage}) {
             </div>
             }
 
-            {
-            likeStatus ?
-            <>
-            <IconButton aria-label="favorite" className="button" onClick={(event) => {putLikes(image)}}><Favorite/></IconButton>
-            <p className="likeCount"> Likes: {image.likes} </p>
-            </>
-            :
-            <>
-            <IconButton aria-label="favorite" className="button" onClick={(event) => {putLikes(image)}}><FavoriteBorder/></IconButton>
-            <p className="likeCount"> Likes: {image.likes} </p>
-            </>
-            }
+            <Badge color="info" badgeContent={image.likes} >
+                 <Fab aria-label="favorite" className="button" onClick={(event) => {putLikes(image)}}> <Favorite/></Fab>
+            </Badge>
+
+
             <IconButton aria-label="delete" className="button" onClick={(event) => {deleteImage(image)}}> <Delete /> </IconButton>
 
         </div>

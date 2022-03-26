@@ -1,36 +1,31 @@
 .App {
   text-align: center;
+  background-color: lightgray;
 }
 
 .App-header {
-  background-color: #222;
+  background-image: url('/public/images/Header.jpg');
+  object-fit: scale-down;
   padding: 1em;
   color: white;
+  text-shadow: 1px gray;
   margin-bottom: 1em;
-}
-
-.App-title {
-  font-size: 1.5em;
 }
 
 .image {
   height: 300px;
   width: 300px;
   object-fit: cover;
-  margin: 10px;
-  padding-bottom: 10px;
 }
 
 .description {
   border: 1px solid black;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: darkgray;
+  color: grey;
   background-color: black;
-  height: 300px;
+  height: 290px;
   width: 300px;
-  object-fit: cover;
-  margin: 10px;
-  padding-bottom: 10px;
+  align-content: center;
   text-align: center;
 }
 
@@ -44,8 +39,9 @@
 
 .imageContainer {
   border: 1px solid black;
+  background-color: grey;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   margin-right: 10px;
 }
 
@@ -55,4 +51,15 @@
 
 .likeCount {
   display: inline;
+}
+
+.form {
+  margin: 10px;
+  padding: 10px;
+}
+
+#formHead {
+  text-transform: uppercase;
+  display: inline;
+  color: #29b6f6
 }
