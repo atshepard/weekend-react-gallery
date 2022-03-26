@@ -19,6 +19,29 @@ router.put('/like/:id', (req, res) => {
         });
 }); // END PUT Route
 
+
+//POST route
+//{ path: newImageLink, description: newImageDescription, likes: 0}
+router.post('/', (req, res) => {
+    const image = req.body;
+    const queryText =
+    `INSERT INTO "images" 
+    ("path", "description", "likes")
+    VALUES ($1, $2, $3)`;
+    // Let sql sanitize your inputs (NO Bobby Drop Tables here!)
+    // the $1, $2, etc get substituted with the values from the array below
+    pool.query(queryText, [image.path, image.description, image.likes])
+        .then((result) => {
+            console.log(`Added image to the database`, image);
+            res.sendStatus(201);
+        })
+        .catch((error) => {
+            console.log(`Error making database query for post`, error);
+            res.sendStatus(500); // Good server always responds
+        });
+});
+
+
 // GET for pulling all items from database:
 router.get('/', (req, res) => {
     // res.send(galleryItems);

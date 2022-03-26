@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import axios from 'axios';
 
 function GalleryForm ({getGallery}) {
 
@@ -21,7 +22,7 @@ function GalleryForm ({getGallery}) {
             }).catch((err) => {
                 console.log('Error in form post', err);
             })
-
+        }
 
     return (
         <>
@@ -36,7 +37,7 @@ function GalleryForm ({getGallery}) {
                         value={newImageLink} />
 
                     <label htmlFor="desc"> Image Description: </label>
-                    <input id="desc" type="number" placeholder="Image Description"
+                    <input id="desc" type="text" placeholder="Image Description"
                         onChange={(event) => setNewImageDescription(event.target.value)}
                         value={newImageDescription} />
 
