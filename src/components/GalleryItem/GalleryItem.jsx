@@ -8,11 +8,19 @@ function GalleryItem ({image, putLikes, deleteImage}) {
     let imgDesc = image.description;
 
     const [imgClicked, setImgClick] = useState(false);
+    const [likeStatus, setLikeStatus] = useState(false);
 
     const handleClick = () => {
         setImgClick(!imgClicked);
         // console.log(imgClicked);
     }
+
+    const checkLikes = () => {
+        if (image.likes > 0) {
+            setLikeStatus(true);
+        }
+      }
+
 
     return(
         <>
@@ -30,10 +38,18 @@ function GalleryItem ({image, putLikes, deleteImage}) {
             </div>
             }
 
-            
-            <Button variant="outlined" className="button" onClick={(event) => {putLikes(image)}}>Like this!</Button>
+            {
+            likeStatus ?
+            <>
+            <IconButton aria-label="favorite" className="button" onClick={(event) => {putLikes(image)}}><Favorite/></IconButton>
             <p className="likeCount"> Likes: {image.likes} </p>
-
+            </>
+            :
+            <>
+            <IconButton aria-label="favorite" className="button" onClick={(event) => {putLikes(image)}}><FavoriteBorder/></IconButton>
+            <p className="likeCount"> Likes: {image.likes} </p>
+            </>
+            }
             <IconButton aria-label="delete" className="button" onClick={(event) => {deleteImage(image)}}> <Delete /> </IconButton>
 
         </div>
