@@ -9,9 +9,9 @@ const galleryItems = require('../modules/gallery.data');
 router.put('/like/:id', (req, res) => {
     console.log(req.params);
     const galleryId = req.params.id;
-    const queryText = `UPDATE "items" SET "likes" = "likes" +1 WHERE "id" = $1`
+    const queryText = `UPDATE "images" SET "likes" = "likes" +1 WHERE "id" = $1`
 
-    pool.query(queryText, galleryId)
+    pool.query(queryText, [galleryId])
         .then(result => {
             res.sendStatus(200);
         }).catch(err => {
