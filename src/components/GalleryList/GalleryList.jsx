@@ -1,6 +1,6 @@
 import GalleryItem from '../GalleryItem/GalleryItem'
 
-function GalleryList ({galleryList}) {
+function GalleryList ({galleryList, putLikes}) {
 
     return(
         <>
@@ -9,6 +9,7 @@ function GalleryList ({galleryList}) {
                      <GalleryItem 
                      key={image.id}
                      image={image}
+                     putLikes={putLikes}
                      />
                     )}
             </div>        
