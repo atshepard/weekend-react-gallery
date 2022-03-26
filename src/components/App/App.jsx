@@ -3,6 +3,7 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import Header from '../Header/Header.jsx';
 import GalleryList from '../GalleryList/GalleryList';
+import GalleryForm from '../GalleryForm/GalleryForm';
 import './App.css';
 
 function App() {
