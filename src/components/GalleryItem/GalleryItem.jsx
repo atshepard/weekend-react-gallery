@@ -1,6 +1,6 @@
 import {useState} from 'react';
 
-function GalleryItem ({image, putLikes}) {
+function GalleryItem ({image, putLikes, deleteImage}) {
     let srcText = image.path;
     let imgDesc = image.description;
 
@@ -30,6 +30,9 @@ function GalleryItem ({image, putLikes}) {
             
             <button className="button" onClick={(event) => {putLikes(image)}}>Like this!</button>
             <p className="likeCount"> Likes: {image.likes} </p>
+
+            <button className="button" onClick={(event) => {deleteImage(image)}}>Delete this!</button>
+
         </div>
         </>
     )

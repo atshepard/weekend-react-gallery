@@ -37,6 +37,18 @@ function App() {
 
   }
 
+  const deleteImage = (image) => {
+    console.log('Delete from App.jsx')
+    axios.delete(`/gallery/${image.id}`)
+        .then(response => {
+            getGallery();
+            console.log('successful delete: ', response);
+        }).catch(err => {
+            console.log('error in delete from App.jsx: ', err);
+        })
+
+  }
+
   return (
     <div className="App">
       <Header />
@@ -51,6 +63,7 @@ function App() {
       <br />
 
       <GalleryList
+        deleteImage={deleteImage}
         galleryList={galleryList}
         putLikes = {putLikes} />
     </div>
