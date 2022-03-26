@@ -30,6 +30,9 @@ function GalleryItem ({image, putLikes}) {
             
             <button className="button" onClick={(event) => {putLikes(image)}}>Like this!</button>
             <p className="likeCount"> Likes: {image.likes} </p>
+
+            <button className="button" onClick={(event) => {putLikes(image)}}>Delete this!</button>
+
         </div>
         </>
     )
