@@ -1,5 +1,7 @@
 import {useState} from 'react';
 import axios from 'axios';
+import { Input } from '@mui/material';
+import { Button } from '@mui/material';
 
 function GalleryForm ({getGallery}) {
 
@@ -26,22 +28,18 @@ function GalleryForm ({getGallery}) {
 
     return (
         <>
-           <div align="left" className="form" >
-                <h2>Add an Image:</h2>
-
-                <form onSubmit={handleSubmit}>
-
-                    <label htmlFor="link"> Image Link: </label>
-                    <input id="link" type="text" placeholder="Image Link"
+           <div className="form" >
+                <form align="center" onSubmit={handleSubmit}>
+                    <h4 id="formHead">Add an Image:</h4>
+                    <Input id="link" variant="filled" color="info" className="form" type="text" placeholder="Image Link"
                         onChange={(event) => setNewImageLink(event.target.value)}
                         value={newImageLink} />
 
-                    <label htmlFor="desc"> Image Description: </label>
-                    <input id="desc" type="text" placeholder="Image Description"
+                    <Input id="desc" variant="filled" color="info" className="form"  type="text" placeholder="Image Description"
                         onChange={(event) => setNewImageDescription(event.target.value)}
                         value={newImageDescription} />
 
-                    <button type="submit">Add Image</button>
+                    <Button color="info" variant="contained" className="form" type="submit">Add Image</Button>
                 </form>
             </div>
         </>

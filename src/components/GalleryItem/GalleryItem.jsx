@@ -1,15 +1,21 @@
 import {useState} from 'react';
+import { IconButton } from '@mui/material';
+import Fab from '@mui/material/Fab';
+import { Badge } from '@mui/material';
+import { Favorite, FavoriteBorder, Delete } from '@mui/icons-material';
 
 function GalleryItem ({image, putLikes, deleteImage}) {
     let srcText = image.path;
     let imgDesc = image.description;
 
     const [imgClicked, setImgClick] = useState(false);
+    const [likeStatus, setLikeStatus] = useState(false);
 
     const handleClick = () => {
         setImgClick(!imgClicked);
         // console.log(imgClicked);
     }
+
 
     return(
         <>
@@ -27,11 +33,12 @@ function GalleryItem ({image, putLikes, deleteImage}) {
             </div>
             }
 
-            
-            <button className="button" onClick={(event) => {putLikes(image)}}>Like this!</button>
-            <p className="likeCount"> Likes: {image.likes} </p>
+            <Badge color="info" badgeContent={image.likes} >
+                 <Fab aria-label="favorite" className="button" onClick={(event) => {putLikes(image)}}> <Favorite/></Fab>
+            </Badge>
 
-            <button className="button" onClick={(event) => {deleteImage(image)}}>Delete this!</button>
+
+            <IconButton aria-label="delete" className="button" onClick={(event) => {deleteImage(image)}}> <Delete /> </IconButton>
 
         </div>
         </>
