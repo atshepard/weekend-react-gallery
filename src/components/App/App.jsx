@@ -9,12 +9,14 @@ import './App.css';
 
 function App() {
 
+  //runs initial get on page load:
   useEffect(() => {
     getGallery();
   }, []);
 
   const [galleryList, setGalleryList] = useState([]);
 
+  //gets all gallery items from database:
   const getGallery = () => {
     axios.get('/gallery')
       .then(response => {
@@ -26,6 +28,7 @@ function App() {
 
   }
 
+  //updates likes for specific image
   const putLikes = (image) => {
     axios.put(`/gallery/like/${image.id}`)
       .then(response => {
@@ -38,6 +41,7 @@ function App() {
 
   }
 
+  //sends axios on delete route for specific image:
   const deleteImage = (image) => {
     console.log('Delete from App.jsx')
 
@@ -66,8 +70,6 @@ function App() {
       }
     });
   }
-
-
 
   return (
     <div className="App">
