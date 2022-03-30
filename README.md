@@ -17,15 +17,13 @@ Project employs Javascript, Node.js, Express.js. pg.js, Postgresql for back-end 
 
 #### Architecting with React.js
 
-This project was my first deployed experiment with React.js, and employs the use of most fundamental features of the framework: particularly component nesting and passing functions and variables on props. Moreso than the other frameworks I have worked with, I am pleased with how seamlessly I was able to integrate my companion libraries, including MaterialUI.
+This project was my first deployed experiment with React.js, and employs the use of most fundamental features of the framework: particularly component nesting and passing functions and variables on props. I found React complimented my planning process very well, allowing me to be efficient with my limited time for this project by enabling me to prioritize functionality of the most critical components and functions first. 
 
-Before building the app, I spent time architecting my component and database layout, and created a baseline framework for my expected variables and functions to be passed on props. This planning process allowed me to be efficient with my limited time for this project by allowing me to prioritize functionality of the most critical components and functions first. 
+Looking back, I would further componentize this app so that the favorite and delete buttons were contained separately.  
 
 #### Styling with MaterialUI
 
 Most of my other Javascript projects have relied heavily on Bootstrap and Sass for styling - this project was my first foray into Material UI. I was able to successfully deploy Floating Action Buttons, Icon Buttons and Badges, but spent a significant portion of my time learning the other implementations for future projects. 
-
-![like badge](wireframes/like-badge.png)
 
 #### Git Branching and Merging
 

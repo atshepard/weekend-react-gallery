@@ -45,30 +45,32 @@ function App() {
   const deleteImage = (image) => {
     console.log('Delete from App.jsx')
 
-    swal({
-      title: "Are you sure?",
-      text: "Once deleted, you will not be able to recover this image!",
-      icon: "warning",
-      buttons: true,
-      dangerMode: true,
-    })
-    .then((willDelete) => {
-      if (willDelete) {
-        swal("Poof! Gone forever!", {
-          icon: "success",
-        });
+    swal('The delete button is currently disabled to preserve all my hard work!')
 
-        axios.delete(`/gallery/${image.id}`)
-        .then(response => {
-            getGallery();
-            console.log('successful delete: ', response);
-        }).catch(err => {
-            console.log('error in delete from App.jsx: ', err);
-        });
-      } else {
-        swal("We'll hang on to this for now!");
-      }
-    });
+    // swal({
+    //   title: "Are you sure?",
+    //   text: "Once deleted, you will not be able to recover this image!",
+    //   icon: "warning",
+    //   buttons: true,
+    //   dangerMode: true,
+    // })
+    // .then((willDelete) => {
+    //   if (willDelete) {
+    //     swal("Poof! Gone forever!", {
+    //       icon: "success",
+    //     });
+
+    //     axios.delete(`/gallery/${image.id}`)
+    //     .then(response => {
+    //         getGallery();
+    //         console.log('successful delete: ', response);
+    //     }).catch(err => {
+    //         console.log('error in delete from App.jsx: ', err);
+    //     });
+    //   } else {
+    //     swal("We'll hang on to this for now!");
+    //   }
+    // });
   }
 
   return (
