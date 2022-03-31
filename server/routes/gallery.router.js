@@ -60,7 +60,6 @@ router.delete('/:id', (req, res) => {
 
 // GET for pulling all items from database:
 router.get('/', (req, res) => {
-    // res.send(galleryItems);
 
     const queryText = `SELECT * FROM "images" ORDER BY "id" DESC;`;
 

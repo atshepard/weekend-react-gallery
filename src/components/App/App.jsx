@@ -45,7 +45,7 @@ function App() {
   const deleteImage = (image) => {
     console.log('Delete from App.jsx')
 
-    swal('The delete button is currently disabled to preserve all my hard work!')
+    swal('The delete button is currently disabled to preserve all my hard work!');
 
     // swal({
     //   title: "Are you sure?",
