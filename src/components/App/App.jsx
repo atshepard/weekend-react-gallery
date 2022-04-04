@@ -59,7 +59,6 @@ function App() {
     //     swal("Poof! Gone forever!", {
     //       icon: "success",
     //     });
-
     //     axios.delete(`/gallery/${image.id}`)
     //     .then(response => {
     //         getGallery();
@@ -68,7 +67,7 @@ function App() {
     //         console.log('error in delete from App.jsx: ', err);
     //     });
     //   } else {
-    //     swal("We'll hang on to this for now!");
+    //     swal  ("We'll hang on to this for now!");
     //   }
     // });
   }

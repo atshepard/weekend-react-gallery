@@ -2,7 +2,6 @@ import {useState} from 'react';
 import axios from 'axios';
 import { Input } from '@mui/material';
 import { Button } from '@mui/material';
-import swal from 'sweetalert';
 
 function GalleryForm ({getGallery}) {
 
@@ -14,19 +13,17 @@ function GalleryForm ({getGallery}) {
         // Prevent constant page refresh
         event.preventDefault();
 
-        swal('The add image functionality has been disabled to preserve the app in its current state!');
-
-        // axios.post('/gallery', { path: newImageLink, description: newImageDescription, likes: 0})
-        //     .then((response) => {
-        //         console.log('form post response', response);
-        //         // Re-render the list with all items
-        //         getGallery();
-        //         // Reset input fields for new use
-        //         setNewImageLink('');
-        //         setNewImageDescription('');
-        //     }).catch((err) => {
-        //         console.log('Error in form post', err);
-        //     })
+        axios.post('/gallery', { path: newImageLink, description: newImageDescription, likes: 0})
+            .then((response) => {
+                console.log('form post response', response);
+                // Re-render the list with all items
+                getGallery();
+                // Reset input fields for new use
+                setNewImageLink('');
+                setNewImageDescription('');
+            }).catch((err) => {
+                console.log('Error in form post', err);
+            })
         }
 
     return (

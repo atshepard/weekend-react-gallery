@@ -1,7 +1,7 @@
 const pool = require('../modules/pool.js');
 const express = require('express');
 const router = express.Router();
-// const galleryItems = require('../modules/gallery.data');
+const galleryItems = require('../modules/gallery.data');
 
 // DO NOT MODIFY THIS FILE FOR BASE MODE
 
@@ -16,7 +16,6 @@ router.put('/like/:id', (req, res) => {
             res.sendStatus(200);
         }).catch(err => {
             console.log('error in pool put', err);
-            res.sendStatus(500);
         });
 }); // END PUT Route
 
@@ -25,7 +24,7 @@ router.put('/like/:id', (req, res) => {
 router.post('/', (req, res) => {
     const image = req.body;
     const queryText =
-        `INSERT INTO "images" 
+    `INSERT INTO "images" 
     ("path", "description", "likes")
     VALUES ($1, $2, $3)`;
     // Let sql sanitize your inputs (NO Bobby Drop Tables here!)
@@ -48,12 +47,12 @@ router.delete('/:id', (req, res) => {
         DELETE FROM "images"
         WHERE "id" = $1;
     `;
+
     pool.query(queryText, [id])
         .then(result => {
             res.sendStatus(204);
         }).catch(err => {
             console.log(err);
-            res.sendStatus(500);
         });
 
 })

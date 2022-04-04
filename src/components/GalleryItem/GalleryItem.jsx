@@ -34,7 +34,7 @@ function GalleryItem ({image, putLikes, deleteImage}) {
             }
 
             <Badge color="info" badgeContent={image.likes} >
-                 <Fab aria-label="favorite" className="button" onClick={(event) => {putLikes(image)}}> <Favorite /></Fab>
+                 <Fab aria-label="favorite" className="button" onClick={(event) => {putLikes(image)}}> <Favorite/></Fab>
             </Badge>
 
             <IconButton aria-label="delete" className="button" onClick={(event) => {deleteImage(image)}}> <Delete /> </IconButton>
